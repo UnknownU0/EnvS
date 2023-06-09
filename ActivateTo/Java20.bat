@@ -18,7 +18,7 @@ set "OLD_Java_Version_01=%OLD_Java_Version_00%"
 )
 set "OLD_Java_Version_00=%Java_Version%"
 )
-set "Java_Version=10"
+set "Java_Version=20"
 set "Now_AllVENV= "
 if DEFINED Python_Version (
 set "Now_AllVENV=[92mPython[0m[42m%Python_Version%[0m %Now_AllVENV%"

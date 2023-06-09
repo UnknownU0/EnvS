@@ -50,8 +50,8 @@ set "Now_AllVENV=[92mC[0m[42m%C_Version%[0m %Now_AllVENV%"
 set "PROMPT=[42m↓[0m%Now_AllVENV%$_[42m>[0m$P$G"
 cd /d ..\%ActivatingEnv%\%ActivatingEnv%%Java_Version%\
 set "OLD_PATH=%PATH%"
-set "JAVA_HOME=%cd%;%cd%\bin;%cd%\jre\bin"
-set "Java_VENV=%JAVA_HOME%"
+set "JAVA_HOME=%cd%"
+set "Java_VENV=%JAVA_HOME%;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin"
 if NOT DEFINED System_PATH (
 set "System_PATH=%PATH%"
 )

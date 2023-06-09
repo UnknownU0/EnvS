@@ -1,6 +1,7 @@
 @echo off
 chcp 65001 > %temp%\Unknown_chcp65001
-set "ActivatingEnv=Java"
+set PYTHONIOENCODING=UTF-8
+set "ActivatingEnv=Python"
 set "Unknown_OriDir_01=%cd%"
 cd /d %~dp0
 set "Unknown_OriDir_00=%cd%"
@@ -9,16 +10,16 @@ set "OLD_PROMPT=[91mNo[0m[41mVENV[0m $P$G"
 )else (
 set "OLD_PROMPT=%PROMPT%"
 )
-if DEFINED Java_Version (
-if DEFINED OLD_Java_Version_00 (
-if DEFINED OLD_Java_Version_01 (
-set "OLD_Java_Version_02=%OLD_Java_Version_01%"
+if DEFINED Python_Version (
+if DEFINED OLD_Python_Version_00 (
+if DEFINED OLD_Python_Version_01 (
+set "OLD_Python_Version_02=%OLD_Python_Version_01%"
 )
-set "OLD_Java_Version_01=%OLD_Java_Version_00%"
+set "OLD_Python_Version_01=%OLD_Python_Version_00%"
 )
-set "OLD_Java_Version_00=%Java_Version%"
+set "OLD_Python_Version_00=%Python_Version%"
 )
-set "Java_Version=10"
+set "Python_Version=312"
 set "Now_AllVENV= "
 if DEFINED Python_Version (
 set "Now_AllVENV=[92mPython[0m[42m%Python_Version%[0m %Now_AllVENV%"
@@ -48,39 +49,38 @@ if DEFINED C_Version (
 set "Now_AllVENV=[92mC[0m[42m%C_Version%[0m %Now_AllVENV%"
 )
 set "PROMPT=[42m↓[0m%Now_AllVENV%$_[42m>[0m$P$G"
-cd /d ..\%ActivatingEnv%\%ActivatingEnv%%Java_Version%\
+cd /d ..\%ActivatingEnv%\%ActivatingEnv%%Python_Version%\
 set "OLD_PATH=%PATH%"
-set "JAVA_HOME=%cd%"
-set "Java_VENV=%JAVA_HOME%;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin"
+set "Python_VENV=%cd%;%cd%\Scripts"
 if NOT DEFINED System_PATH (
 set "System_PATH=%PATH%"
 )
 set "PATH=%Python_VENV%;%Java_VENV%;%Go_VENV%;%PHP_VENV%;%Ruby_VENV%;%Perl_VENV%;%Nodejs_VENV%;%R_VENV%;%C_VENV%;%System_PATH%"
 cd /d %Unknown_OriDir_01%
-echo ###################################
-echo ## [96m%ActivatingEnv%%Java_Version%[0m Virtual Env BY Unknown ##
-echo ###################################
-echo    [42mACTIVATE[0m       ## CMD Edition ##
-echo                   #################
+echo ######################################
+echo ## [96m%ActivatingEnv%%Python_Version%[0m Virtual Env BY Unknown ##
+echo ######################################
+echo    [42mACTIVATE[0m          ## CMD Edition ##
+echo                      #################
 cmd
-echo ###################################
-echo ## [96m%ActivatingEnv%%Java_Version%[0m Virtual Env BY Unknown ##
-echo ###################################
-echo    [101mDEACTIVATE[0m     ## CMD Edition ##
-echo                   #################
+echo ######################################
+echo ## [96m%ActivatingEnv%%Python_Version%[0m Virtual Env BY Unknown ##
+echo ######################################
+echo    [101mDEACTIVATE[0m        ## CMD Edition ##
+echo                      #################
 set "PATH=%OLD_PATH%"
 set "PROMPT=%OLD_PROMPT%"
-if DEFINED OLD_Java_Version_00 (
-set "Java_Version=%OLD_Java_Version_00%"
-set "OLD_Java_Version_00="
+if DEFINED OLD_Python_Version_00 (
+set "Python_Version=%OLD_Python_Version_00%"
+set "OLD_Python_Version_00="
 )else (
-set "Java_Version="
+set "Python_Version="
 )
-if DEFINED OLD_Java_Version_01 (
-set "OLD_Java_Version_00=%OLD_Java_Version_01%"
-set "OLD_Java_Version_01="
+if DEFINED OLD_Python_Version_01 (
+set "OLD_Python_Version_00=%OLD_Python_Version_01%"
+set "OLD_Python_Version_01="
 )
-if DEFINED OLD_Java_Version_02 (
-set "OLD_Java_Version_01=%OLD_Java_Version_02%"
-set "OLD_Java_Version_02="
+if DEFINED OLD_Python_Version_02 (
+set "OLD_Python_Version_01=%OLD_Python_Version_02%"
+set "OLD_Python_Version_02="
 )

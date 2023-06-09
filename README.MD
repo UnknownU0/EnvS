@@ -1,29 +1,32 @@
 # EnvS(Environments for Windows)
 
-## Introduction
+## 简介
 
-In the process of developing under Windows, various open source projects use different combinations of development and operating environments. This environment collection aims to solve this problem.
-When a software needs multiple operating environments and different versions, you can directly drag and drop the combined batch file to apply the environment, without installing the corresponding environment, configuring/changing environment variables, even if the development environments and versions of each software are diverse, Tools can be up and running in seconds.
-At the same time, the environment version can be changed at any time. If the loaded environment is Python3.11, you can directly drag and drop the Python3.10 batch process to change the environment version. If you need to return to the original environment, just "*exit*" to exit the last loading environment of. (PS: The loading and replacement of the environment is in the first-in-last-out mode)
-This collection also prefabricated the "activate" and "deactivate" batches for each environment, which is convenient for free writing of a dedicated operating environment for a certain software. You only need to "call" the "activate" batch of the environment in the final running batch. can be loaded. (PS: The loading and replacement of this environment is also the first-in-last-out mode)
+平时在Windows下开发的过程中各种开源项目使用不同的开发和运行环境组合，本环境集合旨在解决该问题。
 
-## How to use it
+在一个软件需要多种运行环境及不同版本时可直接拖拽组合批处理文件即可应用环境，不需要安装相应环境、配置/更改环境变量，即使各个软件的开发环境和版本多种多样，也可在顷刻之间将工具运行起来。
 
-### 1.Drag and drop for free combination
+同时还可随时更换环境版本，如已经加载的环境为Python3.11，则可直接拖拽Python3.10批处理更换环境版本，如果需要退回原来的环境，只需“exit”即可退出最后一个加载的环境。（注：环境的加载与更换为先进后出的模式）
 
-Open the batch processing of any environment, and drag other environments into it.
+本集合还预制了每个环境的“activate”和“deactivate”批处理，方便自由编写某一软件的专用运行环境，只需要在最终运行批处理中”call“该环境的“activate”批处理即可加载。（注：这种环境的加载与更换同样为先进后出的模式）
 
-**· Quick composition of the operating environment:**
+## 使用方式
+
+### 1.拖拽进行自由组合
+
+打开任意一个环境的批处理，将其他的环境拖拽进来即可。
+
+**· 快捷组成运行环境：**
 
 ![image-Quick_composition_of_the_operating_environment](./images/image-Quick_composition_of_the_operating_environment.png)
 
-**· Quickly switch the operating environment:**
+**· 快捷切换运行环境：**
 
 ![image-Quickly_switch_the_operating_environment-1](./images/image-Quickly_switch_the_operating_environment-1.png)
 
 ![image-Quickly_switch_the_operating_environment-2](./images/image-Quickly_switch_the_operating_environment-2.png)
 
-**· Quickly roll back the operating environment:**
+**· 快捷回退运行环境：**
 
 ![image-Quickly_roll_back_the_operating_environment-1](./images/image-Quickly_roll_back_the_operating_environment-1.png)
 
@@ -31,7 +34,7 @@ Open the batch processing of any environment, and drag other environments into i
 
 ![image-Quickly_roll_back_the_operating_environment-3](./images/image-Quickly_roll_back_the_operating_environment-3.png)
 
-### 2.Freely write dedicated runtime environment batch processing
+### 2.自由编写专用运行环境批处理
 
 ```
 :Start_Soft_001.cmd:
@@ -44,11 +47,11 @@ call cmd
 
 ![image-Freely_write_dedicated_runtime_environment_batch_processing](./images/image-Freely_write_dedicated_runtime_environment_batch_processing.png)
 
-## Environment directories and how they are named
+## 环境目录及其命名方式
 
-Specific environment naming method: %environment name%%mainline version number%
+具体环境命名方式：%环境名称%%主线版本号%
 
-Under the ActivateTo folder, the batch processing of the free combination environment is performed by quick drag and drop.
+ActivateTo文件夹下为快捷拖拽进行自由组合环境的批处理。
 
 ```
 EnvS
@@ -82,17 +85,13 @@ EnvS
 └── ......
 ```
 
-## Environment set acquisition method
+## 环境集合获取方式
 
-The source code of the project is only a batch process for switching environments, please check the latest Releases for those that include environment binary files.
-
-
-
-project address: https://github.com/UnknownU0/EnvS
-
-Releases: https://github.com/UnknownU0/EnvS/releases/tag/Latest
+项目源码仅为用于切换环境的批处理，包含环境二进制文件的请查看最新的Releases。
 
 
 
-**Have enjoy it!**
-
+项目地址：https://github.com/UnknownU0/EnvS
+Releases：https://github.com/UnknownU0/EnvS/releases/tag/Latest
+百度网盘：https://pan.baidu.com/s/13UlV1EtA2vFCw0HG6gJO_w?pwd=envs
+夸克云盘：https://pan.quark.cn/s/c37b5dbb3d6a?pwd=5Fu3

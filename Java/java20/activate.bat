@@ -18,7 +18,7 @@ set "OLD_Java_Version_01=%OLD_Java_Version_00%"
 )
 set "OLD_Java_Version_00=%Java_Version%"
 )
-set "Java_Version=10"
+set "Java_Version=20"
 set "Now_AllVENV= "
 if DEFINED Python_Version (
 set "Now_AllVENV=[92mPython[0m[42m%Python_Version%[0m %Now_AllVENV%"
@@ -48,7 +48,7 @@ if DEFINED C_Version (
 set "Now_AllVENV=[92mC[0m[42m%C_Version%[0m %Now_AllVENV%"
 )
 set "PROMPT=[42m↓[0m%Now_AllVENV%$_[42m>[0m$P$G"
-cd /d ..\%ActivatingEnv%\%ActivatingEnv%%Java_Version%\
+cd /d %Unknown_OriDir_00%
 set "OLD_PATH=%PATH%"
 set "JAVA_HOME=%cd%"
 set "Java_VENV=%JAVA_HOME%;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin"
@@ -62,25 +62,3 @@ echo ## [96m%ActivatingEnv%%Java_Version%[0m Virtual Env BY Unknown ##
 echo ###################################
 echo    [42mACTIVATE[0m       ## CMD Edition ##
 echo                   #################
-cmd
-echo ###################################
-echo ## [96m%ActivatingEnv%%Java_Version%[0m Virtual Env BY Unknown ##
-echo ###################################
-echo    [101mDEACTIVATE[0m     ## CMD Edition ##
-echo                   #################
-set "PATH=%OLD_PATH%"
-set "PROMPT=%OLD_PROMPT%"
-if DEFINED OLD_Java_Version_00 (
-set "Java_Version=%OLD_Java_Version_00%"
-set "OLD_Java_Version_00="
-)else (
-set "Java_Version="
-)
-if DEFINED OLD_Java_Version_01 (
-set "OLD_Java_Version_00=%OLD_Java_Version_01%"
-set "OLD_Java_Version_01="
-)
-if DEFINED OLD_Java_Version_02 (
-set "OLD_Java_Version_01=%OLD_Java_Version_02%"
-set "OLD_Java_Version_02="
-)
